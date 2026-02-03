@@ -27,10 +27,13 @@ function Install-ChromeDev {
     Download-File $Url $Installer "Chrome Dev Portable"
 
     Log "Installing Chrome Dev Portable..."
-    Start-Process -FilePath $Installer -ArgumentList "/VERYSILENT /NORESTART" -Wait
+
+    Start-Process msiexec.exe `
+        -ArgumentList "/i `"$Installer`" /qn /norestart" `
+        -Wait
 
     Remove-Item $Installer -Force
-    Log "Chrome Dev Portable installed."
+    Log "Chrome Dev installed successfully."
 }
 
 
