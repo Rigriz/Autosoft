@@ -21,7 +21,7 @@ function Download-File {
 }
 
 function Install-ChromeDev {
-    $Url = "https://archive.portableapps.com/GoogleChromePortableDev/GoogleChromePortableDev_146.0.7655.2.paf.exe"
+    $Url = "https://dl.google.com/tag/s/appguid%3D%7B401C381F-E0DE-4B85-8BD8-3F3F14FBDA57%7D%26iid%3D%7BE9423A56-462B-C1C4-B510-FDB514F60967%7D%26lang%3Den-GB%26browser%3D4%26usagestats%3D1%26appname%3DGoogle%2520Chrome%2520Dev%26needsadmin%3Dprefers%26ap%3Dx64-statsdef_1%26installdataindex%3Dempty/update2/installers/ChromeSetup.exe"
     $Installer = "$env:TEMP\ChromeDevPortable.exe"
 
     Download-File $Url $Installer "Chrome Dev Portable"
