@@ -21,17 +21,18 @@ function Download-File {
 }
 
 function Install-ChromeDev {
-    $Url = "https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7B00000000-0000-0000-0000-000000000000%7D%26lang%3Den%26browser%3D3%26usagestats%3D0%26appname%3DGoogle%2520Chrome%2520Dev%26needsadmin%3Dtrue/update2/installers/ChromeDevSetup.exe"
-    $Installer = "$env:TEMP\ChromeDevSetup.exe"
+    $Url = "https://archive.portableapps.com/GoogleChromePortableDev/GoogleChromePortableDev_146.0.7655.2.paf.exe"
+    $Installer = "$env:TEMP\ChromeDevPortable.exe"
 
-    Download-File $Url $Installer "Chrome Dev"
+    Download-File $Url $Installer "Chrome Dev Portable"
 
-    Log "Installing Chrome Dev..."
-    Start-Process -FilePath $Installer -ArgumentList "/silent /install" -Wait
+    Log "Installing Chrome Dev Portable..."
+    Start-Process -FilePath $Installer -ArgumentList "/VERYSILENT /NORESTART" -Wait
 
     Remove-Item $Installer -Force
-    Log "Chrome Dev installed."
+    Log "Chrome Dev Portable installed."
 }
+
 
 function Install-VSCode {
     $Url = "https://update.code.visualstudio.com/latest/win32-x64-user/stable"
